@@ -1,0 +1,8 @@
+{
+  "name": "newblog",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "3.4.1",
+    "datatables": "^1.10.18"
+  }
+}
