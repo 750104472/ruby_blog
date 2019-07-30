@@ -9,7 +9,7 @@ default: &default
   encoding: utf8 
   database: newblog
   username: root 
-  password: Linguowei@921124 
+  password: LINGUOWEI@921124lgw 
   host: localhost 
 
 
@@ -18,7 +18,7 @@ development:
   encoding: utf8 
   database: newblog
   username: root 
-  password: Linguowei@921124 
+  password: LINGUOWEI@921124lgw 
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
