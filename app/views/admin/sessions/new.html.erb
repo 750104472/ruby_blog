@@ -1,6 +1,5 @@
-<div class="blog-header">
-  <h1 class="blog-title">Sign In</h1>
-</div>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <h1 class="page-header">Sign In</h1>
 <%= form_for(@user,url:admin_sign_in_path) do |f| %>
   <div class="form-group">
     <label for="user_email">Email address</label>
@@ -13,3 +12,4 @@
   <%= f.submit "Sign In",class:"btn btn-default" %>
   <%= link_to "Back",root_path,class:"btn btn-default"%>
   <% end %>
+</div>
