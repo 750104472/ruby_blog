@@ -1,0 +1,35 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+<h1 class="page-header">Users list</h1>
+<div class="table-responsive">
+<div>
+  <a class="btn btn-primary m20" href="/admin/users/new">New User</a>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nickname</th>
+      <th>Email</th>
+      <th>Created at</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.nickname %></td>
+      <td><%= user.email %></td>
+      <td><%= user.created_at %></td>
+      <td>
+        <%= link_to "Edit",edit_admin_user_path(user) %>
+        <%= link_to "Delete",admin_user_path(user), method: :delete %>
+        
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>

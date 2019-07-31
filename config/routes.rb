@@ -15,6 +15,7 @@ get :sign_out, to: 'sessions#destroy'
 
 resources :posts
 resources :categories
+resources :users
 root to: 'posts#index'
 
 end

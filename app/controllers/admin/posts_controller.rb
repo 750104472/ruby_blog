@@ -1,15 +1,16 @@
 class Admin::PostsController < Admin::BaseController
 	# skip_before_action :verify_authenticity_token
 	def index
-		@posts = Post.all
+		@posts = current_user.posts
 	end
 
-	def new
+
+	def new	
 		@post = Post.new
-	end
+	end	
 
 	def create
-		@post = Post.new(post_params)
+		@post = current_user.posts.new(post_params)
 		if @post.save
 			redirect_to admin_root_path
 		else
