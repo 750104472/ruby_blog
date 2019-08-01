@@ -1,8 +1,7 @@
 class Admin::UsersController < Admin::BaseController
 	# skip_before_action :authenticate, only: [:new, :create]
 	def index
-		@users = User.all
-		@users = @users.order("created_at desc")
+		@users = User.all.order("created_at desc")
 	end
 
 	def new
@@ -13,7 +12,7 @@ class Admin::UsersController < Admin::BaseController
 		@user =User.new(user_params)
 		if @user.save
 			sign_in @user
-			redirect_to admin_root_path
+			redirect_to admin_users_path
 		else
 			render "new"
 		end
@@ -27,7 +26,7 @@ class Admin::UsersController < Admin::BaseController
 		@user = User.find(params[:id])
 		@user.assign_attributes(user_params)
 		if @user.save
-			redirect_to admin_user_path
+			redirect_to admin_users_path
 		else
 			render 'edit'
 		end
@@ -37,7 +36,7 @@ class Admin::UsersController < Admin::BaseController
 	def destroy
 		@user = User.find(params[:id])
 		@user.destroy
-		redirect_to admin_user_path
+		redirect_to admin_users_path
 	end
 
 	private

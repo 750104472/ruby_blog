@@ -17,4 +17,7 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require baidu_ueditor
+//= require ueditor_custom_config
 //= require_tree .
+

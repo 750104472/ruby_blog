@@ -41,13 +41,13 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item active" href="#">Home</a>
+          <a class="blog-nav-item active" href="#">主页</a>
           <% Category.all.each do |category| %>
           <%= link_to category.name,posts_path(category: category.id), class:"blog-nav-item" %>
 
           <% end %>
-          <a class="blog-nav-item" href="#">About</a>
-          <%= link_to("Sign Out", admin_sign_out_path, class:"blog-nav-item pull-right")%>
+          <a class="blog-nav-item" href="#">关于</a>
+          <%= link_to("登出", admin_sign_out_path, class:"blog-nav-item pull-right")%>
         </nav>
       </div>
     </div>
@@ -59,7 +59,7 @@
     </div><!-- /.container -->
 
     <footer class="blog-footer">
-      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      <p>博客创建 <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@Linguowei</a>.</p>
       <p>
         <a href="#">Back to top</a>
       </p>
