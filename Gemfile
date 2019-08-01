@@ -36,6 +36,8 @@ gem 'baidu_ueditor_rails'
 
 gem "truncate_html"
 
+gem 'will_paginate-bootstrap'
+
 # gem 'jquery-datatables-rails', '~> 3.4.0'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

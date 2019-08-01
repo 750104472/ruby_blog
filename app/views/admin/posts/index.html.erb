@@ -18,7 +18,7 @@
   <tbody>
     <% @posts.each_with_index do |post,index| %>
     <tr>
-      <td><%= index+1 %></td>
+      <td><%= show_index(index,@page_number) %></td>
       <td><%= post.title %></td>
       <td><%= post.author %></td>
       <td><%= post.published_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
@@ -30,6 +30,10 @@
     </tr>
     <% end %>
   </tbody>
+
 </table>
+  <div class="text-center">
+      <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+</div>
 </div>
 </div>

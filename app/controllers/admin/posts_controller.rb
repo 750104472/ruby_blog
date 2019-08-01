@@ -1,7 +1,8 @@
 class Admin::PostsController < Admin::BaseController
 	# skip_before_action :verify_authenticity_token
 	def index
-		@posts = current_user.posts
+		@page_number = 4
+		@posts = current_user.posts.paginate(page: params[:page], :per_page => @page_number)
 	end
 
 

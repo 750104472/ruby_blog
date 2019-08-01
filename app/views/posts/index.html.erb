@@ -7,6 +7,7 @@
         <div class="col-sm-12 blog-main">
 
         <% @posts.each do |post| %>
+
           <div class="blog-post">
             <h2 class="blog-post-title f30">
               <%= link_to post_path(post) do  %>
@@ -15,17 +16,17 @@
               </h2>
             <p class="blog-post-meta">
             <%= post.published_at.strftime("%Y-%m-%d %H:%M:%S") %> by <%= post.author %>
-            <br>
-
-            <span class="label label-default"><%= post.category.name %></span>
-
+            <span class="label label-default "><%= post.category.name %></span>
             </p>
 
-        <p class="title f16"> <%= truncate_html(raw(post.content), length: 175, word_boundary: /\S[\.\?\!\ ]/) %> </p>
+        <p class="title f16"> <%= truncate_html(raw(post.content), length: 120, word_boundary: /\S[\.\?\!\ ]/) %> </p>
 
   </div>
 <% end %>
-
+<div class="text-center">
+      <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+</div>
+        
         </div>
 
 
