@@ -2,6 +2,7 @@
 (function () {
     window.CUSTOM_CONFIG = {
       // Insert your config code
+      
       toolbars: [
            ['Source','Undo','Redo','Cleardoc','SearchReplace','InsertImage','WordImage','Bold','ForeColor','JustifyLeft',
            'JustifyCenter','JustifyRight','JustifyJustify','RemoveFormat','FormatMatch','AutoTypeSet','PastePlain',

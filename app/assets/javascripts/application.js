@@ -11,13 +11,12 @@
 // about supported directives.
 //
 //= require jquery3
-
 //= require bootstrap/dist/js/bootstrap.min
 //= require datatables/media/js/jquery.dataTables.min
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require baidu_ueditor
-//= require ueditor_custom_config
+
+
 //= require_tree .
 

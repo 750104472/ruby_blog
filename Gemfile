@@ -32,11 +32,13 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'jquery-rails'
 
-gem 'baidu_ueditor_rails'
 
 gem "truncate_html"
 
 gem 'will_paginate-bootstrap'
+
+gem 'pry-rails', '~> 0.3.9'
+gem 'pry-nav', '~> 0.3.0'
 
 # gem 'jquery-datatables-rails', '~> 3.4.0'
 # Use ActiveStorage variant

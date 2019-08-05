@@ -1,37 +1,41 @@
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
   <h1 class="page-header">New Post</h1>
-  <%= url =  @post.new_record?  ? admin_posts_path : admin_post_path(@post) %>
+  <% url =  @post.new_record?  ? admin_posts_path : admin_post_path(@post) %>
 <%= form_for(@post,url: url) do |f| %>
 <div class="form-group">
-    <label for="post_category">Category</label></br>
-    <%= f.select :category_id, options_for_select(Category.all.pluck(:name,:id)) %>
+    <label for="post_category">文章类型</label></br>
+    <%= f.select :category_id,options_for_select(Category.all.pluck(:name,:id)),{},{class:"form-control"} %>
   </div>
   <div class="form-group">
-    <label for="post_title">Title</label>
-    <%= f.text_field :title,class:"form-control",placeholder:"Title" %>
-  </div>
+    <label for="post_title">标题</label>
+    <%= f.text_field :title,class:"form-control",placeholder:"请输入标题：" %>
+  </div>  
   <div class="form-group">  
-    <label for="post_author">Author</label> 
-    <%= f.text_field :author,class:"form-control",placeholder:"Author" %>
+    <label for="post_author">作者</label> 
+    <%= f.text_field :author,class:"form-control",placeholder:"作者" %>
+  </div>
+  <div class="form-group" >
+    <label for="post_content" >内容</label>
+<%= f.text_area :content %>
   </div>
   <div class="form-group">
-    <label for="post_content">Content</label>
-    <%= f.text_area :content,class:"",placeholder:"Content",style: "height:800px" %>
+    <label for="post_published_at">发布时间</label>
+<%= f.text_field :published_at,class:"form-control",placeholder:"发布时间",onClick:"WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" %>
+   <!--  <input type="text" id="d221" class="Wdate" style="width:300px" onClick="WdatePicker({dateFmt:'yyyy年MM月dd日 HH时mm分ss秒'})"/> -->
   </div>
-  <div class="form-group">
-    <label for="post_published_at">Published at</label>
-    <%= f.datetime_field :published_at,class:"form-control",placeholder:"Published at" %>
-  </div>
-  <% btn_text = @post.new_record? ? 'Create' : 'Update'%>
-  <%= f.submit btn_text ,class:"btn btn-default" %>
+  <% btn_text = @post.new_record? ? '创建' : '更新'%>
+  <%= f.submit btn_text ,class:"btn btn-default" ,:data => { :"disable-with" => "请稍等..." } %>
   <% end %>
 </div>
 
-<script type="text/javascript">
-  $(function(){
-      var editor = new UE.ui.Editor();
-        editor.render("post_content");
-  })
-
-
+<script>
+    CKEDITOR.replace( 'post_content' );
 </script>
+<!-- <script type="text/javascript">
+  var E = window.wangEditor
+        var editor = new E('#div1')
+        
+        editor.create()
+
+
+</script> -->

@@ -32,7 +32,8 @@
     <![endif]-->
   <%= csrf_meta_tag %>
   <%= stylesheet_link_tag "application" %>
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag 'application', '/assets/my97datepicker/WdatePicker.js', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag '', '/assets/ckeditor/ckeditor.js', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>

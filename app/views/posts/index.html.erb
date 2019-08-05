@@ -19,7 +19,7 @@
             <span class="label label-default "><%= post.category.name %></span>
             </p>
 
-        <p class="title f16"> <%= truncate_html(raw(post.content), length: 120, word_boundary: /\S[\.\?\!\ ]/) %> </p>
+        <p class="title f16"> <%= truncate_html(raw(post.content), length: 130, word_boundary: /\S[\.\?\!\ ]/) %> </p>
 
   </div>
 <% end %>

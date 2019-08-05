@@ -1,7 +1,7 @@
 class Admin::PostsController < Admin::BaseController
 	# skip_before_action :verify_authenticity_token
 	def index
-		@page_number = 4
+		@page_number = 10
 		@posts = current_user.posts.paginate(page: params[:page], :per_page => @page_number)
 	end
 
@@ -12,6 +12,7 @@ class Admin::PostsController < Admin::BaseController
 
 	def create
 		@post = current_user.posts.new(post_params)
+
 		if @post.save
 			redirect_to admin_root_path
 		else
